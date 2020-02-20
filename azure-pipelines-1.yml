@@ -21,12 +21,12 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
-  displayName: Build and push image to container registry
-  inputs:
-    command: buildAndPush
-    repository: demos/BlazorServerWithDocker
-    dockerfile: '**/dockerfile'
-    containerRegistry: AzureContainerRegistry
-    tags: |
-      $(Build.BuildId)
-      latest
+      displayName: Build and push image to container registry
+      inputs:
+        command: buildAndPush
+        repository: demos/BlazorServerWithDocker
+        dockerfile: '**/dockerfile'
+        containerRegistry: AzureContainerRegistry
+        tags: |
+          $(Build.BuildId)
+          latest
